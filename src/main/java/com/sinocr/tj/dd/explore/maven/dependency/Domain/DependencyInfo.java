@@ -30,7 +30,7 @@ public class DependencyInfo {
 		groupInfos.add(info);
 	}
 
-	public boolean isContainGroutInfo(GroupInfo info) {
+	public boolean isContainGroupInfo(GroupInfo info) {
 		return groupInfos.contains(info);
 	}
 

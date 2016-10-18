@@ -4,9 +4,13 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo;
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo;
+import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo.ArtifactInfo;
+import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo.ArtifactInfo.VersionInfo;
+import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo.ArtifactInfo.VersionInfo.ProjectInfo;
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.PerProjectInfo;
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.PerProjectInfo.PerDepInfo;
 import com.tinkerpop.blueprints.Direction;
@@ -23,8 +27,8 @@ public class GraphmlAnalyse {
 	public static final String IN_DIRECT_STRING = "Indirect";
 	public static final String SPLIT_STRING = ":";
 	public static final int DEP_ITEM_NUM = 5;
-	
-	private DependencyInfo depInfo=new DependencyInfo();
+
+	private DependencyInfo totalDepInfo = new DependencyInfo();
 
 	public static PerProjectInfo analyse(String filePath) throws IOException {
 
@@ -72,22 +76,90 @@ public class GraphmlAnalyse {
 		}
 		return projectInfo;
 	}
-	
-	public void recordProject(PerProjectInfo projectInfo){
-		for ( PerDepInfo perDepinfo : projectInfo.getDepInfos()) {
-			GroupInfo groupInfo=new GroupInfo();
-			
-			
-		}
-	}
-	
 
+	public void recordProject(PerProjectInfo projectInfo) {
+		for (PerDepInfo perDepinfo : projectInfo.getDepInfos()) {
+			GroupInfo groupInfo = new GroupInfo();
+			// Add groupId
+			groupInfo.setGroupId(perDepinfo.getGroupId());
+			if (!totalDepInfo.isContainGroupInfo(groupInfo)) {
+				totalDepInfo.addGroupInfo(groupInfo);
+			}
+			for (Iterator<GroupInfo> iterator = totalDepInfo.getGroupInfos().iterator(); iterator.hasNext();) {
+				GroupInfo storedGroupInfo = (GroupInfo) iterator.next();
+				if (perDepinfo.getGroupId().equals(storedGroupInfo.getGroupId())) {
+					addArtifact(storedGroupInfo, perDepinfo, projectInfo.getProjectName());
+				}
+			}
+		}
+		System.out.println("Group ID Num: " + totalDepInfo.getGroupInfos().size());
+	}
+
+	// Add ArtifactID
+	private void addArtifact(GroupInfo groupInfo, PerDepInfo depInfo, String projectName) {
+		ArtifactInfo artifactInfo = new ArtifactInfo();
+		artifactInfo.setArtifact(depInfo.getArtifactId());
+		if (!groupInfo.isContainArtifactInfo(artifactInfo)) {
+			groupInfo.addArtifactInfo(artifactInfo);
+		}
+		for (Iterator<ArtifactInfo> iterator = groupInfo.getArtifactInfos().iterator(); iterator.hasNext();) {
+			ArtifactInfo storedInfo = (ArtifactInfo) iterator.next();
+			if (depInfo.getArtifactId().equals(storedInfo.getArtifact())) {
+				addVersion(storedInfo, depInfo, projectName);
+			}
+		}
+
+	}
+
+	// Add Version
+	private void addVersion(ArtifactInfo artifactInfo, PerDepInfo depInfo, String projectName) {
+		VersionInfo versionInfo = new VersionInfo();
+		versionInfo.setVersion(depInfo.getVersion());
+		if (!artifactInfo.isContainVersionInfo(versionInfo)) {
+			artifactInfo.addVersoionInfo(versionInfo);
+		}
+		for (Iterator<VersionInfo> iterator = artifactInfo.getVersionInfos().iterator(); iterator.hasNext();) {
+			VersionInfo storedVersonInfo = (VersionInfo) iterator.next();
+			if (depInfo.getVersion().equals(storedVersonInfo.getVersion())) {
+				addProject(storedVersonInfo, depInfo, projectName);
+			}
+		}
+
+	}
+
+	// Add Project
+	private void addProject(VersionInfo versionInfo, PerDepInfo depInfo, String projectName) {
+		ProjectInfo projectInfo = new ProjectInfo();
+		projectInfo.setName(projectName);
+		projectInfo.setDirectDep(depInfo.isDirectDep());
+		versionInfo.addProjectInfo(projectInfo);
+	}
+
+	public DependencyInfo getTotalDepInfo() {
+		return totalDepInfo;
+	}
 
 	public static void main(String[] args) {
 
 		try {
 			PerProjectInfo projectInfo = GraphmlAnalyse.analyse("D:/Work/workspace/explore-maven/aa.graphml");
-			System.out.println(projectInfo);
+			GraphmlAnalyse analyse = new GraphmlAnalyse();
+			analyse.recordProject(projectInfo);
+			DependencyInfo info = analyse.getTotalDepInfo();
+			System.out.println("Date: " + info.getDate());
+			for (GroupInfo groupInfo : info.getGroupInfos()) {
+				System.out.println("  GroupID: " + groupInfo.getGroupId());
+				for (ArtifactInfo artifactInfo : groupInfo.getArtifactInfos()) {
+					System.out.println("        ArtifactId: " + artifactInfo.getArtifact());
+					for (VersionInfo versionInfo : artifactInfo.getVersionInfos()) {
+						System.out.println("              Version: " + versionInfo.getVersion());
+						for (ProjectInfo proInfo : versionInfo.getProjectInfos()) {
+							System.out.println("                         ProjectName: " + proInfo.getName()
+									+ " Direct: " + proInfo.isDirectDep());
+						}
+					}
+				}
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
