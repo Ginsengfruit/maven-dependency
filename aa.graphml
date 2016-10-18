@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?> <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key for="node" id="d0" yfiles.type="nodegraphics" attr.name="d0" attr.type="string"/> 
+  <key for="edge" id="d1" yfiles.type="edgegraphics"/> 
+<graph id="dependencies" edgedefault="directed">
+<node id="169916747"><data key="d0">com.sinocr.tj.dd:explore-maven:jar:0.0.1-SNAPSHOT</data></node>
+<node id="1020632821"><data key="d0">org.apache.maven.plugins:maven-dependency-plugin:jar:2.10:compile</data></node>
+<node id="867205829"><data key="d0">org.apache.maven:maven-artifact:jar:2.2.1:compile</data></node>
+<edge source="1020632821" target="867205829"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="369573800"><data key="d0">org.apache.maven:maven-plugin-api:jar:2.2.1:compile</data></node>
+<edge source="1020632821" target="369573800"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="482987954"><data key="d0">org.apache.maven:maven-project:jar:2.2.1:compile</data></node>
+<node id="217827560"><data key="d0">org.apache.maven:maven-settings:jar:2.2.1:compile</data></node>
+<edge source="482987954" target="217827560"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1005245720"><data key="d0">org.apache.maven:maven-profile:jar:2.2.1:compile</data></node>
+<edge source="482987954" target="1005245720"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="348084146"><data key="d0">org.apache.maven:maven-plugin-registry:jar:2.2.1:compile</data></node>
+<edge source="482987954" target="348084146"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1188671176"><data key="d0">org.codehaus.plexus:plexus-interpolation:jar:1.11:compile</data></node>
+<edge source="482987954" target="1188671176"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="339186291"><data key="d0">org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile</data></node>
+<edge source="482987954" target="339186291"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="482987954"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2031667192"><data key="d0">org.apache.maven:maven-model:jar:2.2.1:compile</data></node>
+<edge source="1020632821" target="2031667192"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="393481646"><data key="d0">org.apache.maven:maven-core:jar:2.2.1:compile</data></node>
+<node id="475024998"><data key="d0">org.apache.maven.wagon:wagon-file:jar:1.0-beta-6:runtime</data></node>
+<edge source="393481646" target="475024998"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="878506901"><data key="d0">org.apache.maven:maven-plugin-parameter-documenter:jar:2.2.1:compile</data></node>
+<edge source="393481646" target="878506901"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="197449185"><data key="d0">org.apache.maven.wagon:wagon-http-lightweight:jar:1.0-beta-6:compile</data></node>
+<node id="1013620810"><data key="d0">org.apache.maven.wagon:wagon-http-shared:jar:1.0-beta-6:compile</data></node>
+<node id="576191199"><data key="d0">nekohtml:xercesMinimal:jar:1.9.6.2:compile</data></node>
+<edge source="1013620810" target="576191199"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1900307803"><data key="d0">nekohtml:nekohtml:jar:1.9.6.2:compile</data></node>
+<edge source="1013620810" target="1900307803"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="197449185" target="1013620810"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="197449185"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1552076111"><data key="d0">org.apache.maven.wagon:wagon-http:jar:1.0-beta-6:compile</data></node>
+<edge source="393481646" target="1552076111"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="897801829"><data key="d0">org.apache.maven.wagon:wagon-webdav-jackrabbit:jar:1.0-beta-6:runtime</data></node>
+<node id="681564936"><data key="d0">org.apache.jackrabbit:jackrabbit-webdav:jar:1.5.0:runtime</data></node>
+<node id="2049121789"><data key="d0">org.apache.jackrabbit:jackrabbit-jcr-commons:jar:1.5.0:runtime</data></node>
+<edge source="681564936" target="2049121789"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="813780803"><data key="d0">commons-httpclient:commons-httpclient:jar:3.0:runtime</data></node>
+<edge source="681564936" target="813780803"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="897801829" target="681564936"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="534662976"><data key="d0">org.slf4j:slf4j-nop:jar:1.5.3:runtime</data></node>
+<edge source="897801829" target="534662976"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="897801829"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1238339624"><data key="d0">org.slf4j:slf4j-jdk14:jar:1.5.6:runtime</data></node>
+<node id="727818265"><data key="d0">org.slf4j:slf4j-api:jar:1.5.6:runtime</data></node>
+<edge source="1238339624" target="727818265"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="1238339624"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="295700833"><data key="d0">org.slf4j:jcl-over-slf4j:jar:1.5.6:runtime</data></node>
+<edge source="393481646" target="295700833"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2095702106"><data key="d0">org.apache.maven.wagon:wagon-provider-api:jar:1.0-beta-6:compile</data></node>
+<edge source="393481646" target="2095702106"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1234329919"><data key="d0">org.apache.maven:maven-error-diagnostics:jar:2.2.1:compile</data></node>
+<edge source="393481646" target="1234329919"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1876259196"><data key="d0">commons-cli:commons-cli:jar:1.2:compile</data></node>
+<edge source="393481646" target="1876259196"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2117043942"><data key="d0">org.apache.maven.wagon:wagon-ssh-external:jar:1.0-beta-6:runtime</data></node>
+<node id="1299661385"><data key="d0">org.apache.maven.wagon:wagon-ssh-common:jar:1.0-beta-6:compile</data></node>
+<edge source="2117043942" target="1299661385"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="2117043942"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>runtime</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="397822273"><data key="d0">org.apache.maven:maven-plugin-descriptor:jar:2.2.1:compile</data></node>
+<edge source="393481646" target="397822273"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1403815002"><data key="d0">org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile</data></node>
+<edge source="393481646" target="1403815002"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1362501759"><data key="d0">org.apache.maven:maven-monitor:jar:2.2.1:compile</data></node>
+<edge source="393481646" target="1362501759"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="648303898"><data key="d0">org.apache.maven.wagon:wagon-ssh:jar:1.0-beta-6:compile</data></node>
+<node id="66972878"><data key="d0">com.jcraft:jsch:jar:0.1.38:compile</data></node>
+<edge source="648303898" target="66972878"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="648303898"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="876881599"><data key="d0">org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile</data></node>
+<node id="1410456976"><data key="d0">org.sonatype.plexus:plexus-cipher:jar:1.4:compile</data></node>
+<edge source="876881599" target="1410456976"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="393481646" target="876881599"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="393481646"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1343835789"><data key="d0">org.apache.maven:maven-artifact-manager:jar:2.2.1:compile</data></node>
+<node id="1022251996"><data key="d0">backport-util-concurrent:backport-util-concurrent:jar:3.1:compile</data></node>
+<edge source="1343835789" target="1022251996"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="1343835789"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="688581408"><data key="d0">org.apache.maven:maven-repository-metadata:jar:2.2.1:compile</data></node>
+<edge source="1020632821" target="688581408"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1940737740"><data key="d0">org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile</data></node>
+<edge source="1020632821" target="1940737740"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1775897362"><data key="d0">org.apache.maven.reporting:maven-reporting-impl:jar:2.2:compile</data></node>
+<node id="660915526"><data key="d0">org.apache.maven.doxia:doxia-core:jar:1.2:compile</data></node>
+<node id="1497983329"><data key="d0">xerces:xercesImpl:jar:2.9.1:compile</data></node>
+<node id="1082886058"><data key="d0">xml-apis:xml-apis:jar:1.3.04:compile</data></node>
+<edge source="1497983329" target="1082886058"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="660915526" target="1497983329"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2041611826"><data key="d0">org.apache.httpcomponents:httpclient:jar:4.0.2:compile</data></node>
+<node id="2021601975"><data key="d0">org.apache.httpcomponents:httpcore:jar:4.0.1:compile</data></node>
+<edge source="2041611826" target="2021601975"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1794068152"><data key="d0">commons-codec:commons-codec:jar:1.3:compile</data></node>
+<edge source="2041611826" target="1794068152"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="660915526" target="2041611826"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1775897362" target="660915526"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1992630936"><data key="d0">commons-validator:commons-validator:jar:1.3.1:compile</data></node>
+<node id="196717412"><data key="d0">commons-beanutils:commons-beanutils:jar:1.7.0:compile</data></node>
+<edge source="1992630936" target="196717412"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1775897362" target="1992630936"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="1775897362"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="173197870"><data key="d0">commons-io:commons-io:jar:1.4:compile</data></node>
+<edge source="1020632821" target="173197870"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="450420562"><data key="d0">org.apache.maven.doxia:doxia-sink-api:jar:1.4:compile</data></node>
+<node id="1171713907"><data key="d0">org.apache.maven.doxia:doxia-logging-api:jar:1.4:compile</data></node>
+<edge source="450420562" target="1171713907"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="450420562"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="66231846"><data key="d0">org.apache.maven.doxia:doxia-site-renderer:jar:1.4:compile</data></node>
+<node id="527247308"><data key="d0">org.apache.maven.doxia:doxia-decoration-model:jar:1.4:compile</data></node>
+<edge source="66231846" target="527247308"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1133730108"><data key="d0">org.apache.maven.doxia:doxia-module-xhtml:jar:1.4:compile</data></node>
+<edge source="66231846" target="1133730108"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="827099978"><data key="d0">org.apache.maven.doxia:doxia-module-fml:jar:1.4:compile</data></node>
+<edge source="66231846" target="827099978"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="651698411"><data key="d0">org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile</data></node>
+<edge source="66231846" target="651698411"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1350377659"><data key="d0">org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile</data></node>
+<edge source="66231846" target="1350377659"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="167692593"><data key="d0">org.apache.velocity:velocity:jar:1.5:compile</data></node>
+<node id="1555895711"><data key="d0">oro:oro:jar:2.0.8:compile</data></node>
+<edge source="167692593" target="1555895711"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="66231846" target="167692593"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="990226843"><data key="d0">org.apache.velocity:velocity-tools:jar:2.0:compile</data></node>
+<node id="46415544"><data key="d0">commons-chain:commons-chain:jar:1.1:compile</data></node>
+<edge source="990226843" target="46415544"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2097989776"><data key="d0">dom4j:dom4j:jar:1.1:compile</data></node>
+<edge source="990226843" target="2097989776"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1227438915"><data key="d0">sslext:sslext:jar:1.2-0:compile</data></node>
+<edge source="990226843" target="1227438915"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1609960076"><data key="d0">org.apache.struts:struts-core:jar:1.3.8:compile</data></node>
+<node id="2095373876"><data key="d0">antlr:antlr:jar:2.7.2:compile</data></node>
+<edge source="1609960076" target="2095373876"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="990226843" target="1609960076"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1740095856"><data key="d0">org.apache.struts:struts-taglib:jar:1.3.8:compile</data></node>
+<edge source="990226843" target="1740095856"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1732513254"><data key="d0">org.apache.struts:struts-tiles:jar:1.3.8:compile</data></node>
+<edge source="990226843" target="1732513254"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="66231846" target="990226843"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="143251944"><data key="d0">org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile</data></node>
+<edge source="66231846" target="143251944"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="66231846"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1380361139"><data key="d0">org.codehaus.plexus:plexus-archiver:jar:2.9:compile</data></node>
+<node id="195253450"><data key="d0">org.apache.commons:commons-compress:jar:1.9:compile</data></node>
+<edge source="1380361139" target="195253450"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="1380361139"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1280263013"><data key="d0">org.codehaus.plexus:plexus-utils:jar:3.0.20:compile</data></node>
+<edge source="1020632821" target="1280263013"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="181372317"><data key="d0">org.apache.maven.shared:file-management:jar:1.2.1:compile</data></node>
+<node id="1844700236"><data key="d0">org.apache.maven.shared:maven-shared-io:jar:1.1:compile</data></node>
+<edge source="181372317" target="1844700236"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="181372317"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2095573052"><data key="d0">org.codehaus.plexus:plexus-io:jar:2.4:compile</data></node>
+<edge source="1020632821" target="2095573052"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1241897134"><data key="d0">org.apache.maven.shared:maven-dependency-analyzer:jar:1.6:compile</data></node>
+<node id="1016090398"><data key="d0">org.ow2.asm:asm:jar:5.0.2:compile</data></node>
+<edge source="1241897134" target="1016090398"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="1241897134"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1320357188"><data key="d0">org.apache.maven.shared:maven-dependency-tree:jar:2.2:compile</data></node>
+<node id="223783590"><data key="d0">org.eclipse.aether:aether-util:jar:0.9.0.M2:compile</data></node>
+<edge source="1320357188" target="223783590"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="1020632821" target="1320357188"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1769128714"><data key="d0">org.apache.maven.shared:maven-common-artifact-filters:jar:1.4:compile</data></node>
+<edge source="1020632821" target="1769128714"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1470400901"><data key="d0">org.apache.maven.shared:maven-invoker:jar:2.1.1:compile</data></node>
+<edge source="1020632821" target="1470400901"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="28010264"><data key="d0">commons-lang:commons-lang:jar:2.6:compile</data></node>
+<edge source="1020632821" target="28010264"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="957414929"><data key="d0">commons-collections:commons-collections:jar:3.2.1:compile</data></node>
+<edge source="1020632821" target="957414929"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1174737066"><data key="d0">classworlds:classworlds:jar:1.1:compile</data></node>
+<edge source="1020632821" target="1174737066"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="169916747" target="1020632821"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="891175246"><data key="d0">com.tinkerpop.blueprints:blueprints-core:jar:2.6.0:compile</data></node>
+<node id="1876390738"><data key="d0">org.codehaus.jettison:jettison:jar:1.3.3:compile</data></node>
+<node id="1359603919"><data key="d0">stax:stax-api:jar:1.0.1:compile</data></node>
+<edge source="1876390738" target="1359603919"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="891175246" target="1876390738"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="1063723524"><data key="d0">com.fasterxml.jackson.core:jackson-databind:jar:2.2.3:compile</data></node>
+<node id="2025066647"><data key="d0">com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3:compile</data></node>
+<edge source="1063723524" target="2025066647"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="741191984"><data key="d0">com.fasterxml.jackson.core:jackson-core:jar:2.2.3:compile</data></node>
+<edge source="1063723524" target="741191984"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="891175246" target="1063723524"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="847018986"><data key="d0">com.carrotsearch:hppc:jar:0.6.0:compile</data></node>
+<edge source="891175246" target="847018986"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="881662115"><data key="d0">commons-configuration:commons-configuration:jar:1.6:compile</data></node>
+<node id="1818592781"><data key="d0">commons-digester:commons-digester:jar:1.8:compile</data></node>
+<edge source="881662115" target="1818592781"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="754978432"><data key="d0">commons-beanutils:commons-beanutils-core:jar:1.8.0:compile</data></node>
+<edge source="881662115" target="754978432"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="891175246" target="881662115"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="2096268257"><data key="d0">commons-logging:commons-logging:jar:1.1.1:compile</data></node>
+<edge source="891175246" target="2096268257"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="169916747" target="891175246"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>compile</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<node id="551994588"><data key="d0">junit:junit:jar:4.12:test</data></node>
+<node id="1618180899"><data key="d0">org.hamcrest:hamcrest-core:jar:1.3:test</data></node>
+<edge source="551994588" target="1618180899"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>test</y:EdgeLabel></y:PolyLineEdge></data></edge>
+<edge source="169916747" target="551994588"><data key="d1"><y:PolyLineEdge><y:EdgeLabel>test</y:EdgeLabel></y:PolyLineEdge></data></edge>
+</graph></graphml>
