@@ -13,6 +13,8 @@ import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.DependencyInfo.GroupInfo.ArtifactInfo.VersionInfo.ProjectInfo;
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.PerProjectInfo;
 import com.sinocr.tj.dd.explore.maven.dependency.Domain.PerProjectInfo.PerDepInfo;
+import com.sinocr.tj.dd.explore.maven.tools.ExcelTools;
+import com.sinocr.tj.dd.explore.maven.tools.FileTools;
 import com.tinkerpop.blueprints.Direction;
 import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.Graph;
@@ -61,20 +63,45 @@ public class GraphmlAnalyse {
 			}
 			String depString = vertex.getProperty(KEY);
 			String[] depStrings = depString.split(SPLIT_STRING);
-			if (depStrings.length != DEP_ITEM_NUM) {
+			if (depStrings.length == DEP_ITEM_NUM) {
+				PerDepInfo depInfo = new PerDepInfo();
+				depInfo.setGroupId(depStrings[0]);
+				depInfo.setArtifactId(depStrings[1]);
+				depInfo.setVersion(depStrings[3]);
+				depInfo.setScope(depStrings[4]);
+				depInfo.setDirectDep(!isHasEdge);
+				projectInfo.addDepInfo(depInfo);
+			} else if (depStrings.length == 6) {
+				System.out.println("Info: dependency item number is 6!");
+				System.out.println("FilePath: " + filePath + " dep: " + depString);
+				PerDepInfo depInfo = new PerDepInfo();
+				depInfo.setGroupId(depStrings[0]);
+				depInfo.setArtifactId(depStrings[1] + ":" + depStrings[3]);
+				depInfo.setVersion(depStrings[4]);
+				depInfo.setScope(depStrings[5]);
+				depInfo.setDirectDep(!isHasEdge);
+				projectInfo.addDepInfo(depInfo);
+			} else {
 				System.out.println("Warn: dependency item number doesn't match!");
-				continue;
+				System.out.println("FilePath: " + filePath + " dep: " + depString);
 			}
-			PerDepInfo depInfo = new PerDepInfo();
-			depInfo.setGroupId(depStrings[0]);
-			depInfo.setArtifactId(depStrings[1]);
-			depInfo.setVersion(depStrings[3]);
-			depInfo.setScope(depStrings[4]);
-			depInfo.setDirectDep(!isHasEdge);
-			projectInfo.addDepInfo(depInfo);
-
 		}
 		return projectInfo;
+	}
+
+	public void analyseFolder(String folder, String outputPath) throws IOException {
+		String[] graphmlFiles = FileTools.listGraphmlFiles(folder);
+		String folderPath = folder;
+		if (!folder.endsWith("/")) {
+			folderPath = folder + "/";
+		}
+		for (String string : graphmlFiles) {
+
+			PerProjectInfo info = analyse(folderPath + string);
+			recordProject(info);
+		}
+		ExcelTools.writeWorkBook(totalDepInfo, outputPath);
+
 	}
 
 	public void recordProject(PerProjectInfo projectInfo) {
@@ -92,7 +119,6 @@ public class GraphmlAnalyse {
 				}
 			}
 		}
-		System.out.println("Group ID Num: " + totalDepInfo.getGroupInfos().size());
 	}
 
 	// Add ArtifactID
@@ -142,24 +168,10 @@ public class GraphmlAnalyse {
 	public static void main(String[] args) {
 
 		try {
-			PerProjectInfo projectInfo = GraphmlAnalyse.analyse("D:/Work/workspace/explore-maven/aa.graphml");
+
 			GraphmlAnalyse analyse = new GraphmlAnalyse();
-			analyse.recordProject(projectInfo);
-			DependencyInfo info = analyse.getTotalDepInfo();
-			System.out.println("Date: " + info.getDate());
-			for (GroupInfo groupInfo : info.getGroupInfos()) {
-				System.out.println("  GroupID: " + groupInfo.getGroupId());
-				for (ArtifactInfo artifactInfo : groupInfo.getArtifactInfos()) {
-					System.out.println("        ArtifactId: " + artifactInfo.getArtifact());
-					for (VersionInfo versionInfo : artifactInfo.getVersionInfos()) {
-						System.out.println("              Version: " + versionInfo.getVersion());
-						for (ProjectInfo proInfo : versionInfo.getProjectInfos()) {
-							System.out.println("                         ProjectName: " + proInfo.getName()
-									+ " Direct: " + proInfo.isDirectDep());
-						}
-					}
-				}
-			}
+			analyse.analyseFolder("D:/Work/graphml/", "D:/Work/graphml/result.xlsx");
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

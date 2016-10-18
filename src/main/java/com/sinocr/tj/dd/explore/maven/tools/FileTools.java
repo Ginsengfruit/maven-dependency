@@ -2,9 +2,17 @@ package com.sinocr.tj.dd.explore.maven.tools;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
+
+import org.apache.commons.io.filefilter.AndFileFilter;
+import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.apache.commons.io.filefilter.NotFileFilter;
+import org.apache.commons.io.filefilter.SuffixFileFilter;
 
 public class FileTools {
 
@@ -46,6 +54,18 @@ public class FileTools {
 				}
 			}
 		}
+	}
+
+	public static String[] listFiles(String folder, String suffix) {
+		IOFileFilter fileFilter1 = new SuffixFileFilter(suffix);
+		IOFileFilter fileFilter2 = new NotFileFilter(DirectoryFileFilter.INSTANCE);
+		FilenameFilter filenameFilter = new AndFileFilter(fileFilter1, fileFilter2);
+		return new File(folder).list(filenameFilter);
+
+	}
+
+	public static String[] listGraphmlFiles(String folder) {
+		return listFiles(folder, "graphml");
 	}
 
 }
