@@ -2,3 +2,6 @@
 *.graphml
 *.txt
 *.xlsx
+.classpath
+.project
+/.settings/
