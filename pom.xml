@@ -58,6 +58,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
 				<configuration>
 					<source>${project.jdk.version}</source>
 					<target>${project.jdk.version}</target>
@@ -66,6 +67,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.1</version>
 				<configuration>
 					<encoding>${project.build.encoding}</encoding>
 				</configuration>
