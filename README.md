@@ -8,3 +8,7 @@ Like showed below:
 <tr> <td></td>      <td>-ArtifactId1</td> <td>-Version0</td> <td>-UsedProjectName0</td> <td>-isDirectDependency</td></tr>
 <tr> <td>-GroupId1</td> <td>-ArtifactId0</td> <td>-Version0</td> <td>-UsedProjectName0</td> <td>-isDirectDependency</td> </tr>
 </table>
+
+
+use mvn dependency:tree -DoutputFile="aa.graphml" -DoutputType="graphml" to generate graphml file, 
+then use this to generate excel xlsx file
