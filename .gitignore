@@ -1,1 +1,4 @@
 /target/
+*.graphml
+*.txt
+*.xlsx
