@@ -89,6 +89,21 @@ public class GraphmlAnalyse {
 		return projectInfo;
 	}
 
+	/**
+	 * generate result.xlsx in graphml folder
+	 * 
+	 * @param folder
+	 * @throws IOException
+	 */
+	public void analyseFolder(String folder) throws IOException {
+		String folderPath = folder;
+		if (!!folder.endsWith("/")) {
+			folderPath = folder + "/";
+		}
+		String outputPath = folderPath + "result.xlsx";
+		analyseFolder(folder, outputPath);
+	}
+
 	public void analyseFolder(String folder, String outputPath) throws IOException {
 		String[] graphmlFiles = FileTools.listGraphmlFiles(folder);
 		String folderPath = folder;
@@ -163,20 +178,6 @@ public class GraphmlAnalyse {
 
 	public DependencyInfo getTotalDepInfo() {
 		return totalDepInfo;
-	}
-
-	public static void main(String[] args) {
-
-		try {
-
-			GraphmlAnalyse analyse = new GraphmlAnalyse();
-			analyse.analyseFolder("D:/Work/graphml/", "D:/Work/graphml/result.xlsx");
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 
 }
