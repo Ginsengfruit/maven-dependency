@@ -10,5 +10,5 @@ Like showed below:
 </table>
 
 
-use mvn dependency:tree -DoutputFile="aa.graphml" -DoutputType="graphml" to generate graphml file, 
-then use this to generate excel xlsx file
+use .sh file in linux to generate graphml file, 
+then use java to generate excel xlsx file
