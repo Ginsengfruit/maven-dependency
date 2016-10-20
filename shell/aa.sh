@@ -6,19 +6,17 @@ dirpom() {
 		folderPath=$curdir
 		pname=${folderPath##*/}
 		result=$(echo $subdir | grep "$exString")
-		
+		#echo "CURENT: $curdir"
+		#echo "subdir: $subdir"
 		if [ "$result" != "" ]; then
-			echo "CURENT" $curdir
-			echo "SUB"  $subdir
-			echo "AAAA: " $result
-			echo "include @ do nothing"
+			echo "Fold Name: $subdir include @ do nothing"
 		else
 			if [ -d $subdir ];then
 				dirpom $subdir
+				curdir=$1
 			elif [ -f $subdir ] && [ "$subdir" = "$curdir/pom.xml" ]; then
 				echo "pom: " $subdir
-				#echo $direc
-				#echo "$pname"
+				cd $curdir
 				mvn dependency:tree -DoutputFile="$direc/graphml/$pname.graphml" -DoutputType="graphml"
 			
 			fi
