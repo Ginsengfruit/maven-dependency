@@ -31,6 +31,7 @@ public class GraphmlAnalyse {
 	public static final int DEP_ITEM_NUM = 5;
 
 	private DependencyInfo totalDepInfo = new DependencyInfo();
+	private String[] excludeGroupIds = new String[0];
 
 	public static PerProjectInfo analyse(String filePath) throws IOException {
 
@@ -120,6 +121,16 @@ public class GraphmlAnalyse {
 	}
 
 	public void recordProject(PerProjectInfo projectInfo) {
+		String projectGroupId = projectInfo.getProjectName().split(":")[0];
+		if (excludeGroupIds != null) {
+			for (String string : excludeGroupIds) {
+				if (projectGroupId != null && projectGroupId.equals(string)) {
+					System.out.println(projectInfo.getProjectName() + " excluded!");
+					return;
+				}
+			}
+		}
+
 		for (PerDepInfo perDepinfo : projectInfo.getDepInfos()) {
 			GroupInfo groupInfo = new GroupInfo();
 			// Add groupId
@@ -178,6 +189,10 @@ public class GraphmlAnalyse {
 
 	public DependencyInfo getTotalDepInfo() {
 		return totalDepInfo;
+	}
+
+	public void setExcludeGroupIds(String[] excludeGroupIds) {
+		this.excludeGroupIds = excludeGroupIds;
 	}
 
 }

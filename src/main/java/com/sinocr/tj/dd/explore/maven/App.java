@@ -14,6 +14,9 @@ public class App {
 		try {
 
 			GraphmlAnalyse analyse = new GraphmlAnalyse();
+			String[] excludeGroupIds=new String[1];
+			excludeGroupIds[0]="com.sinocr.tj.dd";
+			analyse.setExcludeGroupIds(excludeGroupIds);
 			analyse.analyseFolder("D:/Work/graphml/");
 
 		} catch (IOException e) {
