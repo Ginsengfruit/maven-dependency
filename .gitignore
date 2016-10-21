@@ -1,6 +1,7 @@
 /target/
 *.graphml
 *.txt
+!LICENSE.txt
 *.xlsx
 .classpath
 .project
